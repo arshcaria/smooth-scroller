@@ -38,7 +38,7 @@ import java.util.ArrayList;
 class SmoothScrollerMouseWheelListener implements MouseWheelListener, ActionListener {
     // The frame rate of the animation
     // TODO: Investigate if we can get an AnimationFrame
-    private static final int FRAMES_PER_SECOND = 20;
+    private static final int FRAMES_PER_SECOND = 60;
     private static final int MILLIS_PER_FRAME = 1000 / FRAMES_PER_SECOND;
 
     // Scrolling model of the window
@@ -93,14 +93,14 @@ class SmoothScrollerMouseWheelListener implements MouseWheelListener, ActionList
         // track wheel motion delta
         // TODO: Could use a debounce probably
         final double wheelDelta = e.getPreciseWheelRotation();
-        final boolean sameDirection = mLastWheelDelta * wheelDelta > 0.0D;
-        mLastWheelDelta = wheelDelta;
+//        final boolean sameDirection = mLastWheelDelta * wheelDelta > 0.0D;
+//        mLastWheelDelta = wheelDelta;
 
-        if (!sameDirection) {
-            // changed direction
-            zeroVelocity();
-            return;
-        }
+//        if (!sameDirection) {
+//            // changed direction
+//            zeroVelocity();
+//            return;
+//        }
 
         // calculate new velocity increment
         final double scrollDelta = e.getScrollAmount() * wheelDelta * scrMut;
